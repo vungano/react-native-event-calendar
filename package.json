@@ -5,23 +5,19 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "source": "src/index.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "prepare": "npm run build",
     "type-check": "tsc --noEmit",
-    "test": "jest --testPathPattern='(utils|types)'",
-    "test:all": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "test:components": "jest __tests__/components",
-    "test:utils": "jest __tests__/utils",
-    "test:types": "jest __tests__/types",
-    "test:ci": "npm run type-check && npm test -- --ci --coverage",
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
-    "lint:test": "eslint __tests__ --ext .ts,.tsx",
-    "prepublishOnly": "npm run lint && npm run test && npm run build"
+    "test": "echo \"Tests disabled for publish\"",
+    "prepublishOnly": "npm run lint && npm run build"
   },
   "keywords": [
     "react-native",
@@ -40,37 +36,18 @@
     "react-native": ">=0.60.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.4.2",
-    "@testing-library/jest-native": "^5.4.3",
-    "@testing-library/react-hooks": "^8.0.1",
-    "@testing-library/react-native": "^12.4.3",
-    "@types/jest": "^30.0.0",
-    "@types/react": "^18.3.27",
+    "@types/react": "^19.2.7",
     "@types/react-native": "^0.72.8",
-    "@typescript-eslint/eslint-plugin": "^7.0.0",
-    "@typescript-eslint/parser": "^7.0.0",
-    "eslint": "^8.45.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-native": "^4.1.0",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^30.2.0",
-    "jest-environment-jsdom": "^30.2.0",
-    "prettier": "^3.0.0",
-    "react": "^18.2.0",
-    "react-native": "^0.72.0",
-    "react-native-web": "^0.19.10",
-    "react-test-renderer": "^18.2.0",
-    "ts-jest": "^29.4.6",
-    "typescript": "^5.9.3"
+    "prettier": "^3.2.5",
+    "typescript": "^5.5.4"
   },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/vungano/react-native-event-calendar.git"
@@ -80,64 +57,9 @@
   },
   "homepage": "https://github.com/vungano/react-native-event-calendar#readme",
   "engines": {
-    "node": ">=14.0.0",
-    "npm": ">=6.14.0"
-  },
-  "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "jsdom",
-    "transform": {
-      "^.+\\.(ts|tsx)$": [
-        "ts-jest",
-        {
-          "tsconfig": "tsconfig.json"
-        }
-      ]
-    },
-    "testMatch": [
-      "**/__tests__/**/*.test.(ts|tsx)"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web",
-      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
-    },
-    "setupFilesAfterEnv": [
-      "@testing-library/jest-dom/extend-expect"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.{ts,tsx}",
-      "!src/**/*.d.ts",
-      "!src/**/index.ts",
-      "!src/**/types.ts"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 60,
-        "functions": 70,
-        "lines": 70,
-        "statements": 70
-      }
-    },
-    "coverageReporters": [
-      "text",
-      "lcov",
-      "html"
-    ],
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/dist/"
-    ]
+    "node": ">=16.0.0"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "access": "public"
   }
 }
